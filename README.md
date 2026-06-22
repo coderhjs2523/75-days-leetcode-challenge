@@ -61,9 +61,9 @@ Welcome to my **75 Days LeetCode Challenge**! This repository documents my journ
 
 | Day    | Problems Solved | Status  |
 |--------|-----------------|---------|
-| Day 01 |      0/5        |   ⏳    |
-| Day 02 |      0/5        |   ⏳    |
-| Day 03 |      0/5        |   ⏳    |
+| Day 01 |      5/5        |   ⏳    |
+| Day 02 |      5/5        |   ⏳    |
+| Day 03 |      5/5        |   ⏳    |
 | Day 04 |      0/5        |   ⏳    |
 | Day 05 |      0/5        |   ⏳    |
 | ...    |      ...        |   ...   |
