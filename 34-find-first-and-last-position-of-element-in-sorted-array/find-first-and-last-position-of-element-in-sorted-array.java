@@ -1,27 +1,27 @@
 class Solution {
     public static int firstIndex(int [] nums, int target){
-        int n=nums.length,s=0,l=n-1,Index=-1;
-        while(s<=l){
-            int mid = s+(l-s)/2;
+        int n=nums.length,start=0,end=n-1,Index=-1;
+        while(start<=end){
+            int mid = start+(end-start)/2;
             if(nums[mid]==target){
                 Index=mid;
-                l=mid-1;
+                end=mid-1;
             }    
-            else if(nums[mid]<target) s=mid+1;
-            else l=mid-1;
+            if(nums[mid]<target) start=mid+1;
+            else end=mid-1;
         }
         return Index;
     }
     public static int lastIndex(int [] nums, int target){
-        int n=nums.length,s=0,l=n-1,Index=-1;
-        while(s<=l){
-            int mid = s+(l-s)/2;
+        int n=nums.length,start=0,end=n-1,Index=-1;
+        while(start<=end){
+            int mid = start+(end-start)/2;
             if(nums[mid]==target){
                 Index=mid;
-                s=mid+1;
+                start=mid+1;
             }    
-            else if(nums[mid]<target) s=mid+1;
-            else l=mid-1;
+            else if(nums[mid]<target) start=mid+1;
+            else end=mid-1;
         }
         return Index;
     }
