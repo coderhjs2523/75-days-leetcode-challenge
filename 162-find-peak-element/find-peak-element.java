@@ -1,23 +1,44 @@
 class Solution {
     public int findPeakElement(int[] nums) {
-        int n = nums.length;
-        int start = 0, end = n - 1;
-         if (n == 1)
-            return 0;
-        if (n == 2)
-            return nums[0] > nums[1] ? 0 : 1;
+        int start = 0;
+        int end = nums.length - 1;
 
         while (start < end) {
             int mid = start + (end - start) / 2;
-            if (mid > 0 && mid < n - 1 && nums[mid - 1] < nums[mid] && nums[mid] > nums[mid + 1])
-                return mid;
-            if (nums[mid] < nums[mid + 1]) {
-                start = mid + 1; // go right
+
+            if (nums[mid] > nums[mid + 1]) {
+                end = mid;
             } else {
-                end = mid; // go left
+                start = mid + 1;
             }
         }
 
-        return start; // index of peak
+        return start;
     }
 }
+
+
+
+// class Solution {
+//     public int findPeakElement(int[] nums) {
+//         int n = nums.length;
+//         int start = 0, end = n - 1;
+//          if (n == 1)
+//             return 0;
+//         if (n == 2)
+//             return nums[0] > nums[1] ? 0 : 1;
+
+//         while (start < end) {
+//             int mid = start + (end - start) / 2;
+//             if (mid > 0 && mid < n - 1 && nums[mid - 1] < nums[mid] && nums[mid] > nums[mid + 1])
+//                 return mid;
+//             if (nums[mid] < nums[mid + 1]) {
+//                 start = mid + 1; // go right
+//             } else {
+//                 end = mid; // go left
+//             }
+//         }
+
+//         return start; // index of peak
+//     }
+// }
