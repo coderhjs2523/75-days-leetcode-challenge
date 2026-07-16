@@ -7,11 +7,13 @@ class Solution {
         while (start <= end) {
             int mid = start + (end - start) / 2;
 
+            //special check
             if (mid == 0 && nums[0] != nums[1])
                 return nums[0];
             if (mid == n - 1 && nums[n - 1] != nums[n - 2])
                 return nums[n - 1];
 
+            //binary search condition
             if (nums[mid] != nums[mid + 1] && nums[mid] != nums[mid - 1])
                 return nums[mid];
 
@@ -20,8 +22,8 @@ class Solution {
                     start = mid + 1;
                 else // nums[mid]==nums[mid-1]
                     end = mid - 1;
-            } 
-            
+            }
+
             else { // mid % 2 == 1
                 if (nums[mid] == nums[mid + 1])
                     end = mid - 1;
