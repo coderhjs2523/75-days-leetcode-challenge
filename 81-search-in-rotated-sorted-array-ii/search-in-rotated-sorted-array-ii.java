@@ -12,9 +12,8 @@ class Solution {
                 return true;
 
             // Handle duplicates
-            if (nums[start] == nums[mid] ) {
+            if (nums[start] == nums[mid]) {
                 start++;
-                //end--;
             }
 
             // Left half is sorted
