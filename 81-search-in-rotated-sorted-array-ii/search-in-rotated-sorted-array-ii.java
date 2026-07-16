@@ -12,7 +12,7 @@ class Solution {
                 return true;
 
             // Handle duplicates
-            if (nums[start] == nums[mid] && nums[mid] == nums[end]) {
+            if (nums[start] == nums[mid] ) {
                 start++;
                 //end--;
             }
