@@ -1,5 +1,5 @@
 class Solution {
-
+// k is number of banana eating per hour
     public int calculateHr(int[] nums, int k) {
         int ans = 0;
 
