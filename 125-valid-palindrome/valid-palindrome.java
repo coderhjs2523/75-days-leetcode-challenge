@@ -5,11 +5,11 @@ class Solution {
         int start = 0;
         int end = n - 1;
         while (start < end) {
-            if(!Character.isLetterOrDigit(s.charAt(start))) {
+            if(!Character.isLetterOrDigit(str.charAt(start))) {
                 start++;
                 continue;
             }
-            else if (!Character.isLetterOrDigit(s.charAt(end))) {
+            else if (!Character.isLetterOrDigit(str.charAt(end))) {
                 end--;
                 continue;
             }
