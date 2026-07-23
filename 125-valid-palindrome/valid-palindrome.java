@@ -4,20 +4,20 @@ class Solution {
         int end = s.length() - 1;
 
         while (start < end) {
+            char chStart = s.charAt(start);
+            char chEnd = s.charAt(end);
 
-            if (!Character.isLetterOrDigit(s.charAt(start))) {
+            if (!Character.isLetterOrDigit(chStart)) {
                 start++;
                 continue;
             }
 
-            if (!Character.isLetterOrDigit(s.charAt(end))) {
+            if (!Character.isLetterOrDigit(chEnd)) {
                 end--;
                 continue;
             }
 
-            if (Character.toLowerCase(s.charAt(start)) != Character.toLowerCase(s.charAt(end))) {
-                return false;
-            }
+            if (Character.toLowerCase(chStart) != Character.toLowerCase(chEnd)) return false;
 
             start++;
             end--;
