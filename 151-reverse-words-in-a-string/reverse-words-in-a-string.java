@@ -1,31 +1,29 @@
+// class Solution {
+//     public String reverseWords(String s) {
+//         StringBuilder sb = new StringBuilder();
+//         String[] str = s.trim().split("\\s+");
+//         for (int i = 0; i < str.length; i++) {
+//             String temp = str[i];
+//             sb.insert(0, temp);
+//             sb.insert(0, ' ');
+//         }
+//         return sb.toString().trim();
+//     }
+// }
+
+
 class Solution {
     public String reverseWords(String s) {
-        StringBuilder ans = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
+        String[] str = s.trim().split("\\s+");
 
-        int i = s.length() - 1;
+        for (int i = str.length - 1; i >= 0; i--) {
+            sb.append(str[i]);
 
-        while (i >= 0) {
-
-            while (i >= 0 && s.charAt(i) == ' ') {
-                i--;
+            if (i != 0) {
+                sb.append(" ");
             }
-
-            if (i < 0)
-                break;
-
-            int j = i;
-
-            while (i >= 0 && s.charAt(i) != ' ') {
-                i--;
-            }
-
-            if (ans.length() > 0) {
-                ans.append(' ');
-            }
-
-            ans.append(s.substring(i + 1, j + 1));
         }
-
-        return ans.toString();
+        return sb.toString();
     }
 }
