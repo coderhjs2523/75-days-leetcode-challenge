@@ -4,7 +4,6 @@ class Solution {
             char ch = num.charAt(i);
             if (ch % 2 != 0) return num.substring(0, i + 1);
         }
-        
         return "";
     }
 }
