@@ -16,16 +16,10 @@ class Solution {
             size++;
             temp = temp.next;
         }
-        // int midIdx = 0;
-        // if (size % 2 == 0)
-        //     midIdx = size / 2;
-        // else
-           int midIdx = size / 2;
+        int midIdx = size / 2;
 
-        ListNode target = head;
-        for (int i = 0; i < midIdx; i++) {
-            target = target.next;
-        }
-        return target;
+        temp = head;
+        for (int i = 0; i < midIdx; i++) temp = temp.next;
+        return temp;
     }
 }
