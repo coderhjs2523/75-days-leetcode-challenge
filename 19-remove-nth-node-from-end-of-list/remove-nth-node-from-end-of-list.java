@@ -1,3 +1,40 @@
+// /**
+//  * Definition for singly-linked list.
+//  * public class ListNode {
+//  *     int val;
+//  *     ListNode next;
+//  *     ListNode() {}
+//  *     ListNode(int val) { this.val = val; }
+//  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+//  * }
+//  */
+// class Solution {
+//     public ListNode removeNthFromEnd(ListNode head, int n) {
+//         ListNode temp = head;
+//         int size = 0;
+//         while (temp != null) {
+//             size++;
+//             temp = temp.next;
+//         }
+//         if (size == 1)
+//             return head = null;
+
+//         int removeIdx = size - n;
+//         if (removeIdx == 0){
+//             head = head.next;
+//             return head;
+//         }
+
+//         temp = head;
+//         for (int i = 0; i < removeIdx - 1; i++)
+//             temp = temp.next;
+
+//         temp.next = temp.next.next;
+//         return head;
+//     }
+// }
+
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -5,31 +42,35 @@
  *     ListNode next;
  *     ListNode() {}
  *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ *     ListNode(int val, ListNode next) {
+ *         this.val = val;
+ *         this.next = next;
+ *     }
  * }
  */
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode temp = head;
-        int size = 0;
-        while (temp != null) {
-            size++;
-            temp = temp.next;
-        }
-        if (size == 1)
-            return head = null;
 
-        int removeIdx = size - n;
-        if (removeIdx == 0){
-            head = head.next;
-            return head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode fast = dummy;
+        ListNode slow = dummy;
+
+        // Move fast n+1 steps ahead
+        for (int i = 0; i <= n; i++) {
+            fast = fast.next;
         }
 
-        temp = head;
-        for (int i = 0; i < removeIdx - 1; i++)
-            temp = temp.next;
+        // Move both pointers
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
 
-        temp.next = temp.next.next;
-        return head;
+        // Remove nth node
+        slow.next = slow.next.next;
+
+        return dummy.next;
     }
 }
