@@ -16,11 +16,9 @@ class Solution {
             size++;
             temp = temp.next;
         }
-        // if (size == 1)
-        //     return head = null;
 
         int removeIdx = size - n;
-        if (removeIdx == 0 || size == 1){
+        if (removeIdx == 0){
             head = head.next;
             return head;
         }
