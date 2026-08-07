@@ -18,16 +18,16 @@ class Solution {
             temp = temp.next;
         }
 
-        ListNode slow=head;
-        ListNode fast = head;
+        ListNode start = head;
+        ListNode end = head;
 
-        for(int i=1;i<k;i++) slow = slow.next;
+        for(int i=1; i<k; i++) start = start.next;
         
-        for(int i=1;i<size-k+1;i++) fast=fast.next;
+        for(int i=1; i<size-k+1; i++) end = end.next;
 
-        int value = slow.val;
-        slow.val = fast.val;
-        fast.val = value;
+        int value = start.val;
+        start.val = end.val;
+        end.val = value;
         return head;
     }
 }
